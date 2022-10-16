@@ -27,28 +27,72 @@ Diff = A ⊕ B ⊕ Bin B = A'Bin + A'B + BBin
 
 ## Procedure
 
+Step 1:
+Module Declaration. module is a keywords defined in Verilog .
 
+Step 2:
+Input-Output Delecaration. Half Subtractor has two inputs. Full Subtractor has three inputs.
 
-Write the detailed procedure here 
+Step 3:
+Use wire declaration and assign statements to define the functionality of logic circuits.
 
+Step 4:
+Ending module. endmodule is a keywords defined in Verilog.
 
 ## Program:
-/*
+```
 Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-
+Developed by: Ishwarya.V
+RegisterNumber: 212221240016
+```
+Half Subtractor:
+```
+module halfsub(A,B,diff,barrow);
+input A,B;
+output diff,barrow;
+wire x;
+xor(diff,A,B);
+not(x,A);
+and(barrow,x,B);
+endmodule
+```
+Full Subtractor:
+```
+module fullsub(A,B,C,diff,barrow);
+input A,B,C;
+output diff,barrow;
+assign diff = A ^ B ^ C;
+assign barrow = ~A & (B^C) | B & C;
+endmodule
+```
 ## Output:
 
 ## Truthtable
+Half Subtractor
 
+![output](ht.png)
 
+Full Subtractor
+
+![output](ft.png)
 
 ##  RTL realization
+Half Subtractor
 
+![output](hop.png)
+
+Full Subtractor
+
+![output](fop.png)
 
 ## Timing diagram 
+Half Subtractor
+
+![output](hs.png)
+
+Full Subtractor
+
+![output](fs.png)
 
 ## Result:
 Thus the half subtractor and full subtractor circuits are designed and the truth tables is verified using quartus software.
